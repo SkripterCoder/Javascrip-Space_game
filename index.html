@@ -5,33 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Game</title>
     <style>
-        body {
+        body{
             margin: 0;
             padding: 0;
         }
-        #game-container {
+        #game-container{
             width: 100vw;
             height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
-            border: 1px solid #333;
+            border: 1px solid black;
             background-image: url(background.jpg);
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
         }
-        @keyframes backgroundScroll {
-        0% {
-            background-position: 0 0;
-        }
-        100% {
-            background-position: 0 -2000px;
-        }
-
-        }
-
-        #game-container::before {
+        #game-container::before{
             content: "";
             position: absolute;
             top: 0;
@@ -42,19 +32,43 @@
             background-size: cover;
             background-repeat: repeat-y;
             animation: backgroundScroll 20s linear infinite;
+
         }
-       #player {
+        #player{
             width: 50px;
             height: 50px;
             position: absolute;
-            background-image: url('Space-Ship.png');
+            background-image: url(Space-Ship.png);
             background-size: cover;
             background-repeat: no-repeat;
             bottom: 0;
-            left: 50%;
+            left: 0;
             transform: translateX(-50%);
-}
+        }
+        @keyframes backgroundScroll{
+            0%{ 
+                background-position: 0 0;
 
+            }
+            100%{
+                background-position: 0 -2000px;
+            }
+        }
+       .enemy{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-image: url(enemy.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: rotate(180deg);
+       }
+        .bullet{
+            width: 5px;
+            height: 10px;
+            position: absolute;
+            background-color: royalblue;
+        }
     </style>
 </head>
 <body>
